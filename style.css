@@ -1,0 +1,422 @@
+/* Container Box Alignment */
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  background-color: rgb(28, 112, 87);
+}
+
+/* Image Dimension Safety */
+.logo img {
+  height: 70px;
+  width: auto;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+/* Base Navigation Flex Layout */
+.navbar {
+  display: flex;
+  align-items: center;
+
+}
+
+/* Horizontal Menu Items */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+  
+}
+
+/* Text Element Spacing */
+.nav-menu a {
+  text-decoration: none;
+  color: #04f0f0;
+  font-weight: 500;
+  font-size: 25px;
+  padding: 8px 12px;
+  transition: color 0.2s ease;
+}
+
+/* Focus and Highlight Styling */
+.nav-menu a:hover, 
+.nav-menu a.active {
+  color: #ffff;
+}
+p {
+  font-size: 30px;
+   font-style:italic;
+}
+/* 1. The container acts as the anchor point */
+.image-container {
+    position: relative; /* Crucial: Locks the text coordinates to this box */
+    width: 100%;        /* Forces container to span full width */
+    max-width: 800px;   /* Optional: Sets a maximum width */
+    margin: 0 auto;     /* Centers the container on the page */
+}
+
+/* 2. Style the image to behave nicely */
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;     /* Removes unwanted white space at the bottom */
+}
+
+/* Ensure the outer container allows absolute positioning inside it */
+.banner {
+  position: relative;
+}
+
+/* 💻 Desktop Style for the Text Overlay Box */
+.text-overlay {
+  position: absolute;
+  top: 50%;                 /* Positions the box in the vertical center */
+  left: 50%;                /* Positions the box in the horizontal center */
+  transform: translate(-50%, -50%); /* Perfectly offsets the box to center it */
+  
+  text-align: center;
+  color: #ffffff;           /* Crisp white text color */
+  width: 85%;               /* Limits box width to prevent text touching edges */
+  max-width: 600px;         /* Prevents the text box from getting too wide on desktop */
+  
+  /* Semi-transparent dark background so text is readable over any image */
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Typography Sizing */
+.text-overlay h2 {
+  font-size: 2.8rem;
+  margin: 0 0 12px 0;       /* Spacing below the heading */
+}
+
+.text-overlay p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* 📱 Mobile Adjustments (Screens smaller than 768px) */
+@media (max-width: 768px) {
+  .text-overlay {
+    width: 90%;             /* Gives slightly more room for text on small screens */
+    padding: 20px 15px;     /* Shrinks inner padding to save vertical space */
+  }
+
+  .text-overlay h2 {
+    font-size: 1.8rem;      /* Scales down heading size to fit mobile widths */
+    margin-bottom: 8px;
+  }
+
+  .text-overlay p {
+    font-size: 1.1rem;      /* Scales down paragraph size for mobile readability */
+  }
+}
+
+
+/*our service section*/
+/* Container holding the image, heading, and list */
+.services-container {
+  display: flex;
+  flex-direction: row;      /* Places image on left, content on right */
+  align-items: center;      /* Vertically aligns image and text */
+  gap: 40px;                /* Creates breathing room between left and right sides */
+  max-width: 1300px;        /* Limits width to keep it centered nicely */
+  margin: 0 auto;           /* Centers the container in the middle of the page */
+  padding: 20px;
+}
+
+/* Controls the image size on the left */
+.service-image {
+  flex: 1;                  /* Allows the image area to grow/shrink proportionally */
+  max-width: 50%;   
+  width: 100%;        /* Prevents the image from taking over the screen */
+  height: 470px;          /* Increase this number until it matches your text height */
+  object-fit: cover;     /* Magic line: prevents stretching/distortion by cropping */
+  border-radius: 8px;       /* Optional: rounds the photo corners */
+  object-fit: cover;
+}
+
+/* Creates a text grouping for the heading and the list together */
+.services-container h2, 
+.servicesList {
+  flex: 1;                  /* Allows the text area to take up the remaining space */
+}
+
+/* Makes the main heading stand out */
+.services-container h2 {
+  font-size: 2.5rem;     /* Target size for a large, bold header */
+  margin-bottom: 20px;   /* Adds clean spacing below the header */
+}
+
+/* Makes the list description text larger */
+.servicesList li {
+  font-size: 1.15rem;    /* Increases standard paragraph size */
+  line-height: 1.5;      /* Adds breathing room between sentences */
+  margin-bottom: 10px;   /* Adds vertical spacing between each list bullet */
+  list-style-type:square;
+}
+
+/* Optional: Makes just the bold titles extra distinct */
+.servicesList li strong {
+  font-size: 1.35rem;    /* Makes the title slightly larger than the description */
+}
+
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column; /* Stacks the image on top of the text on mobile */
+    gap: 20px;
+  }
+  
+  .service-image {
+    max-width: 100%;        /* Allows the image to span full width on phones */
+  }
+}
+
+/* Main Layout Container */
+#about {
+  display: flex;
+  flex-direction: row;      /* Text on left, image on right */
+  align-items: center;      /* Vertically centers both columns */
+  gap: 50px;                /* Spacious gap between text and image */
+  max-width: 1200px;
+  margin: 40px auto;        /* Centers the whole section on the page */
+  padding: 20px;
+}
+
+/* Left Side Column (Text) */
+.about-content {
+  flex: 1;                  /* Takes up 50% of the horizontal space */
+}
+
+.about-content h2 {
+  font-size: 2.2rem;        /* Bold, premium header sizing */
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  font-size: 1.15rem;        /* Slightly larger paragraph size */
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 25px;
+}
+
+/* Right Side Column (Image) */
+.about-image {
+  flex: 1;                  /* Takes up the other 50% of horizontal space */
+  width: 100%;
+  height: 500px;            /* Matches the height scale used for your services section */
+  object-fit: cover;        /* Protects aspect ratio from stretching */
+  border-radius: 12px;      /* Rounded image corners */
+}
+
+/* Beautiful Custom Checkmark List Style */
+.about-list {
+  list-style: none;         /* Removes default ugly black bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.about-list li {
+  font-size: 1.20rem;       /* Larger list text size */
+  line-height: 1;
+  color: #444444;
+  margin-bottom: 14px;      /* Generous vertical spacing between items */
+  position: relative;
+  padding-left: 35px;       /* Makes room for the custom icon on the left */
+}
+
+/* Inserts a sharp green checkmark icon in front of every item */
+.about-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  /* Premium green checkmark graphic injected directly via CSS */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='%232ecc71'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* 📱 Responsive Mobile View */
+@media (max-width: 768px) {
+  #about {
+    flex-direction: column-reverse; /* Reverses order so text displays first, image second on phones */
+    gap: 30px;
+  }
+  
+  .about-image {
+    height: 350px;          /* Scales down height perfectly for small screens */
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-list li {
+    font-size: 1.1rem;      /* Comfortably scales down list text for phones */
+  }
+}
+
+
+
+/*badge section*/
+/* Container holding the entire section */
+.badges {
+  flex: 1;
+}
+.badge-image {
+width: 100%;
+height: 450px;
+}
+.badges-text-group {
+  margin: 0;
+  padding: 0;
+
+  
+}
+
+
+
+/* Container Background & Spacing */
+#contact-info {
+  background-color: #ffffff; /* Clean pure white background */
+  padding: 80px 24px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-container {
+  max-width: 700px; /* Kept tight to look intentional and well-designed */
+  margin: 0 auto;
+}
+
+/* Elegant Small Subtitle Over Header */
+.contact-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #007bff; /* Premium branding blue */
+  display: block;
+  margin-bottom: 12px;
+}
+
+.contact-container h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.contact-desc {
+  font-size: 1.15rem;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 45px;
+}
+
+/* Horizontal Row for Premium Action Buttons */
+.contact-flex-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Spacious separation */
+  margin-bottom: 35px;
+}
+
+/* Premium Icon-Only Action Circles Base */
+.btn-circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Ultra smooth motion */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Custom Individual Button Identities */
+.call-btn {
+  background-color: #007bff; /* Primary Blue */
+}
+.call-btn .btn-icon { filter: brightness(0) invert(1); } /* Flattens emoji to crisp white if supported */
+
+.whatsapp-btn {
+  background-color: #25D366; /* Official WhatsApp Green */
+}
+
+.email-btn {
+  background-color: #f1f3f5; /* Light gray minimalist button */
+}
+.email-btn .btn-icon {
+  font-size: 1.8rem;
+}
+
+/* Dynamic Interactive Hover Micro-Animations */
+.btn-circle:hover {
+  transform: translateY(-6px); /* Moves up smoothly */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14); /* Depth changes dynamically */
+}
+
+.btn-circle:hover .btn-icon {
+  transform: scale(1.15); /* Snappy feedback pop on the inner icon */
+}
+
+/* Specific theme highlights on pointer hover */
+.call-btn:hover { background-color: #0056b3; }
+.whatsapp-btn:hover { background-color: #1ebd56; }
+.email-btn:hover { background-color: #e2e6ea; }
+
+/* Subtle Secondary Footer Info */
+.contact-footer-text {
+  font-size: 0.95rem;
+  color: #888888;
+  border-top: 1px solid #eeeeee;
+  padding-top: 25px;
+  display: inline-block;
+}
+.contact-footer-text strong {
+  color: #333333;
+}
+
+/* 📱 Flawless Mobile Scaling */
+@media (max-width: 480px) {
+  .contact-container h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-flex-layout {
+    gap: 20px; /* Brings circles slightly closer together on tiny viewports */
+  }
+
+  .btn-circle {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .btn-icon {
+    font-size: 1.6rem;
+  }
+}
